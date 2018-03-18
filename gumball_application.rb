@@ -27,13 +27,15 @@ end
 class GumballMachineView
 
   def greeting
-    # output a greeting message to the console
+    puts "Welcome to the Gumball Machine"
+    menuOptions = "Press G to get a gumball, R to refill, or X to exit"
+    puts menuOptions
   end
 
   def menu
     choice = nil
     while choice != "G" && choice != "R" && choice != "X"
-      puts "Press G to get a gumball, R to refill, or X to exit"
+      puts menuOptions
       choice = gets.chomp.upcase
     end
 
@@ -45,18 +47,22 @@ class GumballMachineView
   end
 
   def machineEmpty
-    # output an appropriate message to the console
+    puts "There are no more gumballs :( Please refill before trying again."
   end
 
   def refill(count)
-    # output an appropriate message to the console.
-    # Make sure you tell the user how many gumballs there are now!
+    puts "How many gumballs would you like to add?"
+    refill = gets.chomp.to_i
+    @gumballCount = @gumballCount + refill
+    puts "There are now\ " && @gumballCount && "\ gumball/s in the machine."
+    #add a else if
   end
 
   def exit
-    # output an appropriate message to the console
+    puts "Thank you for your patronage, have a good day!"
   end
 
+end
 end
 
 class GumballMachineController

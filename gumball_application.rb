@@ -4,7 +4,8 @@ end
 class GumballMachineModel
 
   def initialize(gumballCount: 0)
-    # fill in this line
+    @gumballCount
+    puts "There are\ " && @gumballCount && "gumball/s in the Gumball Machine"
   end
 
   def dispense
@@ -21,6 +22,7 @@ class GumballMachineModel
   end
 
 end
+
 
 class GumballMachineView
 

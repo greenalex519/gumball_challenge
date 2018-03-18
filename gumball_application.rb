@@ -82,16 +82,16 @@ class GumballMachineController
         if gumball.nil?
           @gumballMachineView.machineEmpty
         else
-          # fill in this line
+          @gumballMachineView.get
         end
       end
       if choice == "R"
         numGumballs = @gumballMachineModel.refill(6)
-        @gumballMachineView.refill( ) # put something inside the brackets
+        @gumballMachineView.refill(choice) # put something inside the brackets
       end
       choice = @gumballMachineView.menu
     end
-    # call the exit method
+    gumballMachineView.exit
   end
 end
 
